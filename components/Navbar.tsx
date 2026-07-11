@@ -55,7 +55,7 @@ export default function Navbar() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!searchQuery) return;
-    const match = searchableProducts.find(p => 
+    const match = searchableProducts.find(p =>
       p.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     if (match) {
@@ -75,14 +75,13 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-350 bg-white/95 backdrop-blur-md border-b border-border-custom shadow-sm ${
-          scrolled ? "py-3" : "py-4.5"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-350 bg-white/95 backdrop-blur-md border-b border-border-custom shadow-sm ${scrolled ? "py-3" : "py-4.5"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="relative z-50 flex items-center">
-            <div className="relative h-14 w-56 md:h-16 md:w-64 transition-transform duration-300 hover:scale-103">
+            <div className="relative h-14 w-56 md:h-20 md:w-80 transition-transform duration-300 hover:scale-103">
               <Image
                 src="/narvo-transparent.png"
                 alt="NARVO Textile & Hardware"
