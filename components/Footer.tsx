@@ -53,9 +53,9 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Details (5 cols width on large screens) */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             <Link href="/" className="inline-block">
-              <div className="relative h-10 w-36 transition-transform duration-300 hover:scale-105">
+              <div className="relative h-14 w-56 transition-transform duration-300 hover:scale-103">
                 <Image
-                  src="/logo.png"
+                  src="/narvo-transparent.png"
                   alt="NARVO Textile & Hardware"
                   fill
                   className="object-contain brightness-0 invert"
