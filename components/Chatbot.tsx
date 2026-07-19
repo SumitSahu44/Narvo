@@ -17,15 +17,15 @@ const WHATSAPP_NUMBER = "918875341190";
 
 const SUB_MENUS = {
   initial: [
-    { text: "🧵 Textile Customization", action: "textiles" },
+    { text: "🚪 Doors & Veneers", action: "doors_veneers" },
     { text: "🛠️ Hardware Products", action: "hardware" },
     { text: "📦 Wholesale B2B Quote", action: "wholesale" },
     { text: "📍 Showroom Location", action: "showroom" },
     { text: "📞 Talk to an Agent", action: "form" }
   ],
-  textiles: [
-    { text: "🧵 Curtains Inquiry", action: "form" },
-    { text: "🛋️ Upholstery Fabrics", action: "form" },
+  doors_veneers: [
+    { text: "🚪 Custom Solid Doors", action: "form" },
+    { text: "🍂 Decorative Veneers", action: "form" },
     { text: "📖 Request Catalog", action: "form" },
     { text: "🔙 Back to Menu", action: "menu" }
   ],
@@ -57,7 +57,7 @@ export default function Chatbot() {
     {
       id: "initial",
       sender: "bot",
-      text: "Hello! Welcome to NARVO Textile & Hardware. How can we assist you today? Select an option below or type your inquiry directly.",
+      text: "Hello! Welcome to NARVO Hardware. How can we assist you today? Select an option below or type your inquiry directly.",
       timestamp: new Date()
     }
   ]);
@@ -119,9 +119,9 @@ export default function Chatbot() {
         replyText = "You can call us directly at our showroom phone: +91 8875341190. We are open Mon-Sat, 10 AM to 7:30 PM.";
         setCurrentMenu("call");
         break;
-      case "textiles":
-        replyText = "NARVO designs premium textiles for luxury spaces. We offer bespoke curtains, performance upholstery fabrics, and custom weaves. Tell me a bit about your project or style preferences!";
-        setCurrentMenu("textiles");
+      case "doors_veneers":
+        replyText = "NARVO offers custom engineered doors and premium decorative veneers for luxury interiors. We source raw veneers and fabricate doors to your designer specifications. Tell us about your door/veneer requirements!";
+        setCurrentMenu("doors_veneers");
         break;
       case "hardware":
         replyText = "Our hardware collection features architectural-grade door handles, luxury cabinet pulls, and custom fittings, mostly handcrafted in solid brass. What kind of hardware solutions are you sourcing?";
@@ -144,9 +144,9 @@ export default function Chatbot() {
       default:
         // Keyword checking
         const textLower = userText.toLowerCase();
-        if (textLower.includes("textile") || textLower.includes("fabric") || textLower.includes("curtain") || textLower.includes("sofa")) {
-          replyText = "Our textiles represent premium quality weaves and designs. We'd love to show you catalog swatches. Let us know what project you are working on!";
-          setCurrentMenu("textiles");
+        if (textLower.includes("door") || textLower.includes("veneer") || textLower.includes("plywood") || textLower.includes("board")) {
+          replyText = "We offer bespoke engineered doors, premium decorative wood veneers, and high-strength plywood. Let us know what requirements you have for your project!";
+          setCurrentMenu("doors_veneers");
         } else if (textLower.includes("hardware") || textLower.includes("handle") || textLower.includes("lock") || textLower.includes("pull")) {
           replyText = "We offer bespoke solid-brass hardware, door locks, and designer cabinet knobs. Let us know if you need our catalog or pricing details!";
           setCurrentMenu("hardware");
@@ -210,7 +210,7 @@ export default function Chatbot() {
     e.preventDefault();
     if (!formData.name.trim()) return;
 
-    const formattedText = `Hi NARVO Textile & Hardware,%0A%0A*New Inquiry from Chatbot*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Phone/Email*: ${encodeURIComponent(formData.phone || "Not provided")}%0A*Inquiry*: ${encodeURIComponent(formData.inquiry || "General Inquiry")}`;
+    const formattedText = `Hi NARVO Hardware,%0A%0A*New Inquiry from Chatbot*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Phone/Email*: ${encodeURIComponent(formData.phone || "Not provided")}%0A*Inquiry*: ${encodeURIComponent(formData.inquiry || "General Inquiry")}`;
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${formattedText}`;
     
     window.open(waUrl, "_blank");

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Products from "@/sections/Products";
 
 export const metadata: Metadata = {
-  title: "Premium Collections | NARVO Textile & Hardware",
+  title: "Premium Collections | NARVO Hardware",
   description: "Browse NARVO's luxury hardware collections, hydraulic cabinet hinges, sliding drawer channels, designer doors, and decorative veneers.",
 };
 

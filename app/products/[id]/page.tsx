@@ -70,10 +70,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: "Product Not Found" };
 
   return {
-    title: `${product.name} | NARVO Textile & Hardware`,
+    title: `${product.name} | NARVO Hardware`,
     description: product.description,
     openGraph: {
-      title: `${product.name} | NARVO Textile & Hardware`,
+      title: `${product.name} | NARVO Hardware`,
       description: product.description,
       images: [{ url: product.images[0] }],
     }

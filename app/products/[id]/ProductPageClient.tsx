@@ -86,7 +86,7 @@ export default function ProductPageClient({ product }: { product: Product }) {
       return;
     }
 
-    const text = `Hi NARVO Textile & Hardware,\n\nI want to place a B2B enquiry for: *${product.name}*\n\n*Inquirer Details*:\n- *Name*: ${formData.name}\n- *Company*: ${formData.company || "N/A"}\n- *Required Quantity*: ${formData.quantity} units\n- *Message*: ${formData.message || "Please share catalogs and pricing details."}`;
+    const text = `Hi NARVO Hardware,\n\nI want to place a B2B enquiry for: *${product.name}*\n\n*Inquirer Details*:\n- *Name*: ${formData.name}\n- *Company*: ${formData.company || "N/A"}\n- *Required Quantity*: ${formData.quantity} units\n- *Message*: ${formData.message || "Please share catalogs and pricing details."}`;
     
     const url = `https://wa.me/918875341190?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");

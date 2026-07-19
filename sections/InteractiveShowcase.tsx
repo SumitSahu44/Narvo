@@ -80,7 +80,7 @@ export default function InteractiveShowcase() {
   };
 
   const getWhatsAppLink = (product: Product) => {
-    const text = `Hi NARVO Textile & Hardware, I want to enquire about the B2B product: "${product.name}". Please share wholesale catalogs, lead times, and shipping terms.`;
+    const text = `Hi NARVO Hardware, I want to enquire about the B2B product: "${product.name}". Please share wholesale catalogs, lead times, and shipping terms.`;
     return `https://wa.me/918875341190?text=${encodeURIComponent(text)}`;
   };
 

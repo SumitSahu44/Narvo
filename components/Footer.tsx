@@ -47,14 +47,14 @@ export default function Footer() {
               <div className="relative h-14 w-56 transition-transform duration-300 hover:scale-103">
                 <Image
                   src="/narvo-transparent.png"
-                  alt="NARVO Textile & Hardware"
+                  alt="NARVO Hardware"
                   fill
                   className="object-contain object-left brightness-0 invert"
                 />
               </div>
             </Link>
             <p className="text-white/60 text-sm font-sans leading-relaxed">
-              Delivering premium textile and hardware solutions that blend quality, design, and sustainability for luxury spaces.
+              Delivering premium architectural hardware and interior solutions that blend quality, design, and sustainability for luxury spaces.
             </p>
 
             {/* Socials */}

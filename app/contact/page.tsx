@@ -9,7 +9,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const faqItems = [
   {
     question: "What types of products does NARVO specialize in?",
-    answer: "NARVO specializes in premium architectural hardware, luxury door handles, solid-brass cabinet pulls, bespoke doors, decorative wood veneers, and custom home textiles tailored for high-end residential and commercial interiors."
+    answer: "NARVO specializes in premium architectural hardware, luxury door handles, solid-brass cabinet pulls, bespoke doors, decorative wood veneers, and custom modular solutions tailored for high-end residential and commercial interiors."
   },
   {
     question: "Do you offer custom wholesale or B2B pricing?",
@@ -24,8 +24,8 @@ const faqItems = [
     answer: "Our showroom is located at A-1, Basement, Triveni Nagar Mod, Gopalpura Bypass, Jaipur, Rajasthan - 302018. We are open Monday to Saturday from 10:00 AM to 7:30 PM, but you can contact our B2B helpdesk 24/7."
   },
   {
-    question: "Can I customize hardware designs or textile weaves?",
-    answer: "Absolutely. We specialize in custom designs. For hardware, we can manufacture custom shapes and sizes in solid brass. For textiles, we collaborate on custom colors, patterns, and fabric weights to match your design guidelines."
+    question: "Can I customize hardware designs or door profiles?",
+    answer: "Absolutely. We specialize in custom designs. For hardware, we can manufacture custom shapes and sizes in solid brass. For doors and modular fittings, we collaborate on custom colors, sizes, and veneer patterns to match your design guidelines."
   }
 ];
 
@@ -61,7 +61,7 @@ export default function ContactPage() {
       return;
     }
 
-    const formattedText = `Hi NARVO Textile & Hardware,%0A%0A*New Website Inquiry*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Company*: ${encodeURIComponent(formData.company || "N/A")}%0A*Phone*: ${encodeURIComponent(formData.phone)}%0A*Email*: ${encodeURIComponent(formData.email || "N/A")}%0A*Inquiry Category*: ${encodeURIComponent(formData.category)}%0A*Message*: ${encodeURIComponent(formData.message || "General Inquiry")}`;
+    const formattedText = `Hi NARVO Hardware,%0A%0A*New Website Inquiry*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Company*: ${encodeURIComponent(formData.company || "N/A")}%0A*Phone*: ${encodeURIComponent(formData.phone)}%0A*Email*: ${encodeURIComponent(formData.email || "N/A")}%0A*Inquiry Category*: ${encodeURIComponent(formData.category)}%0A*Message*: ${encodeURIComponent(formData.message || "General Inquiry")}`;
     const waUrl = `https://wa.me/918875341190?text=${formattedText}`;
     
     window.open(waUrl, "_blank");
@@ -271,7 +271,7 @@ export default function ContactPage() {
                   className="w-full text-xs font-sans border border-border-custom focus:border-primary focus:outline-none p-3.5 rounded-xl bg-lightgray transition-colors"
                 >
                   <option value="Hardware Products">🛠️ Architectural Hardware</option>
-                  <option value="Textile Customization">🧵 Premium Textiles</option>
+                  <option value="Doors & Veneers">🚪 Custom Doors & Veneers</option>
                   <option value="Wholesale B2B Quote">📦 Wholesale & Plywood</option>
                   <option value="Showroom Visit">📍 Book Showroom Appointment</option>
                 </select>

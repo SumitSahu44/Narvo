@@ -38,7 +38,7 @@ const solutionsList = [
 
 export default function SolutionsClient() {
   const getWhatsAppSolutionLink = (solutionName: string) => {
-    const text = `Hi NARVO Textile & Hardware, I am interested in your B2B "${solutionName}" Solutions. Please share brochures, pricing structures, and sample catalogs.`;
+    const text = `Hi NARVO Hardware, I am interested in your B2B "${solutionName}" Solutions. Please share brochures, pricing structures, and sample catalogs.`;
     return `https://wa.me/918875341190?text=${encodeURIComponent(text)}`;
   };
 

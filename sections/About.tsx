@@ -49,7 +49,7 @@ export default function About() {
 
             <Reveal yOffset={20} delay={0.3}>
               <p className="text-sm sm:text-base font-sans text-text-custom/75 leading-relaxed">
-                Founded on the values of premium engineering, design elegance, and environmental integrity, NARVO is a leading brand in luxury architectural hardware, custom doors, wood veneers, and home textiles. We empower architects, builders, and designers with top-tier materials that define the modern standard of living.
+                Founded on the values of premium engineering, design elegance, and environmental integrity, NARVO is a leading brand in luxury architectural hardware, custom doors, wood veneers, and modular solutions. We empower architects, builders, and designers with top-tier materials that define the modern standard of living.
               </p>
             </Reveal>
 

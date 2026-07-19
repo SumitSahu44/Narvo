@@ -84,7 +84,7 @@ export default function Navbar() {
             <div className="relative h-10 w-20 md:h-12 md:w-24 transition-transform duration-300 hover:scale-103">
               <Image
                 src="/narvo-transparent.png"
-                alt="NARVO Textile & Hardware"
+                alt="NARVO Hardware"
                 fill
                 priority
                 className="object-contain object-left"

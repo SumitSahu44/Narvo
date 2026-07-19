@@ -16,14 +16,14 @@ function CountUp({ target, duration = 1.5, suffix = "" }: { target: number; dura
 
   useEffect(() => {
     if (!isInView) return;
-    
+
     let startTimestamp: number | null = null;
-    
+
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
       setCount(Math.floor(progress * target));
-      
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       } else {
@@ -50,7 +50,7 @@ const stats = [
     icon: Calendar,
     title: "Innovative Design",
     desc: "Stylish solutions designed for luxury and ergonomics.",
-    targetNum: 25,
+    targetNum: 20,
     suffix: "+",
     subtext: "Years of Trust"
   },
@@ -94,28 +94,28 @@ export default function AboutClient() {
 
           {/* Heading */}
           <div className="flex flex-col gap-3 max-w-3xl">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-[10px] font-sans font-bold uppercase tracking-[0.3em] text-primary"
             >
               Our Heritage
             </motion.span>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-secondary tracking-tight"
             >
-              About NARVO Textile & Hardware
+              About NARVO Hardware
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-sm sm:text-base font-sans text-text-custom/60 leading-relaxed"
             >
-              Founded on the values of premium engineering, design elegance, and environmental integrity, NARVO is a leading brand in luxury architectural hardware, custom doors, wood veneers, and home textiles.
+              Founded on the values of premium engineering, design elegance, and environmental integrity, NARVO is a leading brand in luxury architectural hardware, custom doors, wood veneers, and modular solutions.
             </motion.p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function AboutClient() {
       <section className="py-24 bg-white px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left: Beautiful brand image placeholder/graphic */}
             <Reveal yOffset={30} delay={0.1}>
               <div className="relative h-[320px] sm:h-[450px] rounded-[36px] overflow-hidden shadow-2xl bg-secondary">
@@ -172,7 +172,7 @@ export default function AboutClient() {
                   <div className="p-5 border border-border-custom bg-lightgray rounded-2xl">
                     <h4 className="font-heading font-bold text-secondary text-base">Our Mission</h4>
                     <p className="text-xs font-sans text-text-custom/60 mt-1.5 leading-relaxed">
-                      To empower designers and homeowners with superior hardware and textile products that blend performance, longevity, and aesthetics.
+                      To empower designers and homeowners with superior hardware and interior products that blend performance, longevity, and aesthetics.
                     </p>
                   </div>
                 </Reveal>
@@ -195,7 +195,7 @@ export default function AboutClient() {
       <section className="py-24 bg-secondary text-white relative overflow-hidden px-6 md:px-12 lg:px-24">
         {/* Glow */}
         <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/10 rounded-full blur-[80px]" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col mb-16 max-w-xl">
             <span className="text-xs font-sans font-bold uppercase tracking-widest text-primary mb-2.5 inline-block">
@@ -223,7 +223,7 @@ export default function AboutClient() {
                     className="group relative glass-panel-dark p-8 rounded-[24px] border border-white/5 shadow-xl hover:border-primary/50 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col justify-between min-h-[260px]"
                   >
                     <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                    
+
                     <div className="relative z-10 flex flex-col gap-4">
                       <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                         <Icon className="w-4 h-4" />
@@ -259,7 +259,7 @@ export default function AboutClient() {
       <section id="sustainability" className="py-24 bg-lightgray px-6 md:px-12 lg:px-24 border-t border-b border-border-custom relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
+
             {/* Details */}
             <div className="flex flex-col gap-6">
               <Reveal yOffset={20} delay={0.1}>
@@ -324,7 +324,7 @@ export default function AboutClient() {
       <section id="stores" className="py-24 bg-white px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left: Map/Store Details (lg:col-span-5) */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               <Reveal yOffset={20} delay={0.1}>
@@ -365,13 +365,13 @@ export default function AboutClient() {
             <div className="lg:col-span-7">
               <Reveal yOffset={30} delay={0.25}>
                 <div className="w-full rounded-[32px] overflow-hidden border border-border-custom shadow-xl bg-lightgray aspect-video h-[300px] sm:h-[400px]">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2961.3006852964804!2d75.78214057543791!3d26.867862976673937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDUyJzA0LjMiTiA3NcKwNDcnMDUuMCJF!5e1!3m2!1sen!2sin!4v1783865193826!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={true} 
-                    loading="lazy" 
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2961.3006852964804!2d75.78214057543791!3d26.867862976673937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDUyJzA0LjMiTiA3NcKwNDcnMDUuMCJF!5e1!3m2!1sen!2sin!4v1783865193826!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
                     title="NARVO Showroom Location Map"
                   />
                 </div>

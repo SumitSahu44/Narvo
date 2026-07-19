@@ -20,8 +20,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "NARVO Textile & Hardware | Luxury Architectural Interiors",
-  description: "Premium textiles, architectural hardware, doors, plywood, and wood veneers. Redefining modern luxury spaces with handcrafted precision.",
+  title: "NARVO Hardware | Luxury Architectural Interiors",
+  description: "Premium architectural hardware, doors, plywood, and wood veneers. Redefining modern luxury spaces with handcrafted precision.",
 };
 
 export default function RootLayout({

@@ -13,14 +13,14 @@ function CountUp({ target, duration = 1.5, suffix = "" }: { target: number; dura
 
   useEffect(() => {
     if (!isInView) return;
-    
+
     let startTimestamp: number | null = null;
-    
+
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
       setCount(Math.floor(progress * target));
-      
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       } else {
@@ -47,7 +47,7 @@ const chooseCards = [
     icon: Calendar,
     title: "Innovative Design",
     desc: "Stylish solutions designed for luxury and ergonomics.",
-    targetNum: 25,
+    targetNum: 20,
     suffix: "+",
     subtext: "Years of Trust"
   },
@@ -107,7 +107,7 @@ export default function WhyChoose() {
                 >
                   {/* Subtle Background Particle Animation Placeholder */}
                   <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                  
+
                   {/* Card Icon & Text */}
                   <div className="relative z-10 flex flex-col gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
