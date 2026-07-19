@@ -63,9 +63,9 @@ const productsData: Product[] = [
 ];
 
 export default function InteractiveShowcase() {
-  const [doorOpen, setDoorOpen] = useState(false);
+  const [doorOpen, setDoorOpen] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(productsData[0]);
 
   // 360 Degree Viewer states
   const [imageIndex, setImageIndex] = useState(0);
@@ -121,9 +121,8 @@ export default function InteractiveShowcase() {
       <div className="absolute inset-0 grid-bg opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-
         {/* Header Block */}
-        <div className="flex flex-col items-center text-center mb-20 max-w-xl mx-auto">
+        <div className="flex flex-col mb-20 max-w-xl">
           <span className="text-xs font-sans font-bold uppercase tracking-widest text-primary mb-2.5 inline-block">
             Virtual Experience
           </span>
@@ -134,7 +133,6 @@ export default function InteractiveShowcase() {
             Open the cabinet door or pull the drawer to reveal and inspect our B2B fittings in detail.
           </p>
         </div>
-
         {/* 2-Column Showcase Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
 
@@ -164,7 +162,10 @@ export default function InteractiveShowcase() {
                   transition={{ type: "spring", stiffness: 90, damping: 15 }}
                   onClick={() => {
                     setDoorOpen(!doorOpen);
-                    if (!doorOpen) selectProduct("slimline-hinge");
+                    if (!doorOpen) {
+                      selectProduct("slimline-hinge");
+                      setDrawerOpen(false);
+                    }
                   }}
                   className="absolute inset-0 bg-[#2d3135] border-8 border-[#202326] rounded-t-xl cursor-pointer p-1.5 shadow-xl select-none flex items-center justify-end preserve-3d z-10"
                   style={{ originX: 0 }}
@@ -220,7 +221,10 @@ export default function InteractiveShowcase() {
                   transition={{ type: "spring", stiffness: 95, damping: 14 }}
                   onClick={() => {
                     setDrawerOpen(!drawerOpen);
-                    if (!drawerOpen) selectProduct("drawer-channel");
+                    if (!drawerOpen) {
+                      selectProduct("drawer-channel");
+                      setDoorOpen(false);
+                    }
                   }}
                   className="absolute inset-0 bg-[#202326] border-2 border-[#181a1c] rounded-b-xl cursor-pointer flex flex-col justify-center items-center shadow-xl select-none z-10"
                 >

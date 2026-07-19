@@ -2,9 +2,32 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, Sparkles } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+
+const faqItems = [
+  {
+    question: "What types of products does NARVO specialize in?",
+    answer: "NARVO specializes in premium architectural hardware, luxury door handles, solid-brass cabinet pulls, bespoke doors, decorative wood veneers, and custom home textiles tailored for high-end residential and commercial interiors."
+  },
+  {
+    question: "Do you offer custom wholesale or B2B pricing?",
+    answer: "Yes, we work closely with architects, builders, and interior designers, providing volume-based wholesale pricing, dedicated accounts, custom manufacturing specifications, and early access to new collections."
+  },
+  {
+    question: "How can I request catalog samples or material swatches?",
+    answer: "You can submit an inquiry through our contact form above, call/WhatsApp our showroom directly, or visit our Jaipur office to inspect physical samples, catalog swatches, and material details in person."
+  },
+  {
+    question: "Where is your showroom located, and what are the timings?",
+    answer: "Our showroom is located at A-1, Basement, Triveni Nagar Mod, Gopalpura Bypass, Jaipur, Rajasthan - 302018. We are open Monday to Saturday from 10:00 AM to 7:30 PM, but you can contact our B2B helpdesk 24/7."
+  },
+  {
+    question: "Can I customize hardware designs or textile weaves?",
+    answer: "Absolutely. We specialize in custom designs. For hardware, we can manufacture custom shapes and sizes in solid brass. For textiles, we collaborate on custom colors, patterns, and fabric weights to match your design guidelines."
+  }
+];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +38,12 @@ export default function ContactPage() {
     category: "Hardware Products",
     message: ""
   });
+  const [waConsent, setWaConsent] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -27,8 +56,12 @@ export default function ContactPage() {
       alert("Please fill in your Name and Phone Number.");
       return;
     }
+    if (!waConsent) {
+      alert("Please agree to communicate with us on WhatsApp to proceed.");
+      return;
+    }
 
-    const formattedText = `Hi NARVO Textile & Hardware,%0A%0A*New B2B Website Inquiry*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Company*: ${encodeURIComponent(formData.company || "N/A")}%0A*Phone*: ${encodeURIComponent(formData.phone)}%0A*Email*: ${encodeURIComponent(formData.email || "N/A")}%0A*Inquiry Category*: ${encodeURIComponent(formData.category)}%0A*Message*: ${encodeURIComponent(formData.message || "General Inquiry")}`;
+    const formattedText = `Hi NARVO Textile & Hardware,%0A%0A*New Website Inquiry*:%0A*Name*: ${encodeURIComponent(formData.name)}%0A*Company*: ${encodeURIComponent(formData.company || "N/A")}%0A*Phone*: ${encodeURIComponent(formData.phone)}%0A*Email*: ${encodeURIComponent(formData.email || "N/A")}%0A*Inquiry Category*: ${encodeURIComponent(formData.category)}%0A*Message*: ${encodeURIComponent(formData.message || "General Inquiry")}`;
     const waUrl = `https://wa.me/918875341190?text=${formattedText}`;
     
     window.open(waUrl, "_blank");
@@ -145,18 +178,18 @@ export default function ContactPage() {
                   </div>
                   <div className="font-sans text-sm text-white/70">
                     <p className="font-bold text-white mb-1">Business Hours</p>
-                    <p>Monday - Saturday</p>
-                    <p className="font-medium text-white">10:00 AM - 7:30 PM</p>
+                    <p>Open 24 Hours / 7 Days</p>
+                    <p className="font-medium text-white">24/7 Available</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: B2B Contact Form (lg:col-span-7) */}
+          {/* Right Column: Contact Form (lg:col-span-7) */}
           <div className="lg:col-span-7 bg-white border border-border-custom p-8 md:p-10 rounded-[32px] shadow-sm">
             <h2 className="text-xl font-heading font-extrabold text-secondary tracking-wide mb-6">
-              Send B2B Enquiry
+              Send Enquiry
             </h2>
             
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -259,6 +292,22 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* WhatsApp Consent Checkbox */}
+              <div className="flex items-start gap-3 py-1 text-xs text-secondary/70 font-sans cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  id="waConsent"
+                  name="waConsent"
+                  required
+                  checked={waConsent}
+                  onChange={(e) => setWaConsent(e.target.checked)}
+                  className="mt-0.5 h-4.5 w-4.5 rounded border-border-custom text-primary focus:ring-primary cursor-pointer transition-colors"
+                />
+                <label htmlFor="waConsent" className="cursor-pointer leading-relaxed text-secondary/80 text-[11px] sm:text-xs">
+                  Yes, I am ready to communicate with the Narvo team on WhatsApp.
+                </label>
+              </div>
+
               {/* Submit to WhatsApp */}
               <button
                 type="submit"
@@ -288,6 +337,65 @@ export default function ContactPage() {
               referrerPolicy="strict-origin-when-cross-origin"
               title="NARVO Showroom Location Map"
             />
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-24 border-t border-border-custom pt-16 flex flex-col gap-10">
+          <div className="flex flex-col">
+            <span className="text-xs font-sans font-bold uppercase tracking-widest text-primary mb-2.5 inline-block">
+              Common Queries
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-secondary tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-sm text-text-custom/60 mt-2 font-sans">
+              Everything you need to know about our premium products and B2B ordering process.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 max-w-4xl">
+            {faqItems.map((item, idx) => {
+              const isOpen = openFaqIndex === idx;
+              return (
+                <div
+                  key={idx}
+                  className="border border-border-custom rounded-2xl bg-lightgray/30 overflow-hidden transition-all duration-300"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full p-5 sm:p-6 text-left flex justify-between items-center gap-4 cursor-pointer"
+                  >
+                    <span className="font-heading font-bold text-sm sm:text-base text-secondary hover:text-primary transition-colors">
+                      {item.question}
+                    </span>
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center text-secondary hover:bg-primary/10 hover:text-primary transition-colors">
+                      {isOpen ? (
+                        <span className="text-lg font-bold leading-none">-</span>
+                      ) : (
+                        <span className="text-lg font-bold leading-none">+</span>
+                      )}
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm font-sans text-text-custom/75 leading-relaxed border-t border-border-custom/50 pt-4 bg-white/40">
+                          {item.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
 

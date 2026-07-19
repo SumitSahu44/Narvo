@@ -45,7 +45,7 @@ export default function Process() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Block */}
-        <div className="flex flex-col items-center text-center mb-20 max-w-xl mx-auto">
+        <div className="flex flex-col mb-20 max-w-xl">
           <span className="text-xs font-sans font-bold uppercase tracking-widest text-primary mb-2.5 inline-block">
             Methodology
           </span>

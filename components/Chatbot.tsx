@@ -249,7 +249,7 @@ export default function Chatbot() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="absolute bottom-[144px] right-0 pointer-events-auto w-[330px] sm:w-[380px] h-[460px] max-h-[calc(100vh-180px)] rounded-2xl flex flex-col shadow-2xl bg-[#141414] border border-white/10 overflow-hidden z-[1000]"
+              className="absolute bottom-[80px] right-0 pointer-events-auto w-[330px] sm:w-[380px] h-[460px] max-h-[calc(100vh-180px)] rounded-2xl flex flex-col shadow-2xl bg-[#141414] border border-white/10 overflow-hidden z-[1000]"
             >
               {/* Header */}
               <div className="bg-[#1a1a1a] px-5 py-4 border-b border-white/5 flex items-center justify-between">
@@ -408,33 +408,12 @@ export default function Chatbot() {
           )}
         </AnimatePresence>
 
-        {/* Direct WhatsApp Button (Top Button in visual Stack) */}
-        <motion.a
-          href="https://wa.me/918875341190?text=Hi%20NARVO%20Textile%20%26%20Hardware%2C%20I%20am%20interested%20in%20inquiring%20about%20your%20products%20for%20a%20B2B%20wholesale%20requirement."
-          target="_blank"
-          rel="noreferrer"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
-          className="pointer-events-auto w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 active:scale-95 group interactive cursor-pointer"
-          aria-label="Direct WhatsApp Chat"
-        >
-          {/* Subtle green blinking/ping indicator */}
-          <span className="absolute inset-0 rounded-full bg-[#25D366]/20 animate-ping group-hover:animate-none pointer-events-none" />
-          <FaWhatsapp className="w-7 h-7 relative z-10" />
-
-          {/* Floating Tooltip */}
-          <span className="absolute right-16 bg-[#111111] text-white text-xs font-semibold px-3.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md whitespace-nowrap border border-white/10 pointer-events-none">
-            WhatsApp Direct
-          </span>
-        </motion.a>
-
         {/* The Toggle FAB (AI Assistant) (Bottom Button in visual Stack) */}
         <motion.button
           onClick={toggleChat}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.7, type: "spring", stiffness: 260, damping: 20 }}
+          transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
           className={`pointer-events-auto w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 active:scale-95 group interactive cursor-pointer ${
             isOpen ? "bg-white text-secondary hover:bg-white/95" : "bg-primary text-white hover:bg-primary/90"
           }`}
