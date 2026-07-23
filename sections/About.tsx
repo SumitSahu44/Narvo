@@ -11,11 +11,6 @@ export default function About() {
     <section id="about-intro" className="relative py-24 bg-white overflow-hidden px-6 md:px-12 lg:px-24">
       {/* Background Subtle Accent Grid */}
       <div className="absolute inset-0 grid-bg opacity-[0.03] pointer-events-none" />
-      
-      {/* Decorative Index "01" */}
-      <div className="absolute left-6 top-10 text-[12rem] md:text-[16rem] font-heading font-extrabold text-[#F8F8F8] select-none pointer-events-none leading-none z-0">
-        01
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
